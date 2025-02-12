@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Ryane Queiroz dos Santos Passos",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": -22.45, "left": -92.45, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -11.6, "left": 28.8, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 52,
+      "left": -229.3,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 128.75,
+      "left": -163.2,
+      "attrs": { "value": "15" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 119.15,
+      "left": -163.2,
+      "attrs": { "value": "15" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 138.35,
+      "left": -163.2,
+      "attrs": { "value": "68" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:3V3", "servo1:V+", "red", [ "h38.71", "v-0.1" ] ],
+    [ "pico:GP22", "servo1:PWM", "orange", [ "h0" ] ],
+    [ "pico:GND.8", "servo1:GND", "black", [ "v9.6", "h77.11" ] ],
+    [ "pico:GP12", "r2:2", "blue", [ "h0" ] ],
+    [ "r2:1", "rgb1:B", "blue", [ "h-28.8", "v-48" ] ],
+    [ "r3:2", "pico:GP11", "green", [ "v0" ] ],
+    [ "r3:1", "rgb1:G", "green", [ "h-38.4", "v-38.4" ] ],
+    [ "pico:GP13", "r4:2", "red", [ "h0" ] ],
+    [ "r4:1", "rgb1:R", "red", [ "h-57.6", "v-57.6" ] ],
+    [ "pico:GND.3", "rgb1:COM", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
