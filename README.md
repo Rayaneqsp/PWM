@@ -1,85 +1,70 @@
-Controle de Servo Motor e LED RGB com Raspberry Pi Pico
+# Projeto de Controle de Servo Motor e LED RGB com Raspberry Pi Pico W
 
-Descrição do Projeto
+Este projeto utiliza uma **Raspberry Pi Pico W** para controlar um **servo motor** e um **LED RGB** simultaneamente. O servo motor realiza movimentos entre 0° e 180°, enquanto o LED RGB muda de cor de acordo com a posição do servo.
 
-Este projeto utiliza uma Raspberry Pi Pico W para controlar um servo motor e um LED RGB simultaneamente. O servo motor realiza movimentos suaves entre 0° e 180°, enquanto o LED RGB muda de cor de acordo com a posição do servo.
+O código faz uso da biblioteca pico/stdlib e das funções de PWM para controlar tanto o servo quanto o LED RGB.
 
-O código faz uso da biblioteca pico/stdlib e das funções de PWM (Pulse Width Modulation) para controlar tanto o servo quanto o LED RGB.
+### Componentes Utilizados
 
-Componentes Utilizados
+- **BiDogLab (RP4020)** - Placa de desenvolvimento.
+- **Simulador Wokwi**
+- **Servo motor**
+- **LED RGB** (Vermelho, Verde e Azul) – Conectados às GPIOs 11, 12 e 13.
+- **Resistores** (se necessário para o LED RGB)
 
-Raspberry Pi Pico W
+## Como Usar
 
-Servo motor
+1. ### : Clonando o Repositório
 
-LED RGB comum (cátodo comum ou anodo comum, ajustável no código)
+   - No GitHub, acesse o repositório e clique em **Code** (Código) para copiar o link de clonagem.
+   - No terminal do seu VSCode, execute o comando para clonar o repositório:
 
-Resistores (se necessário para o LED RGB)
+  Adicione este comando:
+  
+   git clone https://github.com/Rayaneqsp/PWM.git
 
-Fios de conexão
+   **Abrindo o projeto no VSCode**:
+   - Abra o VSCode e carregue a pasta do projeto clonada
+     
+2.  ### Rodando a Simulação do Wokwi
 
-Fonte de alimentação compatível (5V para o servo e 3.3V para a Pico)
+    **Configuração do Circuito no Simulador**:
+   - No editor Wokwi, adicione o **Servo motor** e o **LED RGB** conecte-os aos seguintes pinos do Raspberry Pi Pico W:
+| Componente       | Pino GPIO no Pico W |
+|------------------|---------------------|
+| LED Azul         | GPIO 12             |
+| LED Vermelho     | GPIO 13             |
+| LED Verde        | GPIO 11             |
+| Servomotor       | GPIO 22             |
 
-BitDogLab
+## Observações:
 
+- **Resistores** estão conectados com o LED RGB para limitar a corrente para a cor Verde e Azul 15Ω e para a cor vermelha 68Ω , menos na conexão com a porta COM.
 
-Funcionamento
-
-1. O código inicializa a comunicação serial e configura os pinos de PWM para o servo motor e o LED RGB.
-
-
-2. Define três posições iniciais para o servo motor (0°, 90° e 180°), alternando entre elas com pausas de 5 segundos.
-
-
-3. Após as posições fixas, inicia um movimento suave e contínuo entre 0° e 180°, alternando progressivamente.
-
-
-4. O LED RGB muda de cor conforme o ângulo do servo:
-
-Verde (0°)
-
-Azul (90°)
-
-Vermelho (180°)
-
-Durante a movimentação suave, a cor transita entre verde e vermelho.
-
-
-
-
-Pinos Utilizados
-
-Configuração do PWM
-
-Servo Motor: Frequência de 50 Hz (Período de 20 ms), com pulsos variando de 500 µs (0°) a 2400 µs (180°).
-
-LED RGB: Frequência ajustada para permitir controle de brilho suave (PWM de 8 bits, valores entre 0 e 255).
-
-
-Como Usar
-
-1. Monte o circuito conforme a tabela de pinos.
-
-
-2. Compile e carregue o código na Raspberry Pi Pico.
-
-
-3. O servo começará a se mover entre 0° e 180° continuamente e o LED mudará de cor.
-
-
-
-Bibliotecas Necessárias
-
-pico/stdlib.h
-
-pico/time.h
-
-hardware/irq.h
-
-hardware/pwm.h
-
-
+3. ### Compile e carregue o código na Raspberry Pi Pico.
 Caso esteja usando o SDK do Raspberry Pi Pico, certifique-se de que ele está corretamente configurado.
+
+### Funcionamento:
+
+- O código inicializa configurando os pinos de **PWM** para o **servo motor** e o **LED RGB**.
+- Define três posições iniciais para o **servo motor** (0°, 90° e 180°), alternando entre elas com pausas de **5 segundos**.
+-  Após as posições fixas, inicia um **movimento suave** e contínuo entre 0° e 180°, alternando progressivamente.
+-   O **LED RGB** muda de cor conforme o ângulo do servo:
+     - **Verde (0°)**
+     - **Azul (90°)**
+     - **Vermelho (180°)**
+     - Durante a movimentação suave, a cor transita entre **verde** e **vermelho**.
+
+## Licença
+
+Este projeto está licenciado para estudo e conhecimento.
+
+## Autora:
+
+**RAYANE QUEIROZ DOS SANTOS PASSOS**
+
+## Link do vídeo:
+https://www.dropbox.com/scl/fi/e6kr1bac0vyj9tb3cyolt/pwm.mp4?rlkey=bvd81xhw3xq9xi12pof3uptde&st=xzinut4z&dl=0
 
 
 
