@@ -9,7 +9,7 @@ O código faz uso da biblioteca pico/stdlib e das funções de PWM para controla
 - **BiDogLab (RP4020)** - Placa de desenvolvimento.
 - **Simulador Wokwi**
 - **Servo motor**
-- **LED RGB** (Vermelho, Verde e Azul) – Conectados às GPIOs 11, 12 e 13.
+- **LED RGB** 
 - **Resistores** (se necessário para o LED RGB)
 
 ## Como Usar
