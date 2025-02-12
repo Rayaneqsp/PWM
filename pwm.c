@@ -74,7 +74,7 @@ void mover_suavemente(uint gpio_pin, uint largura_inicial, uint largura_final, i
 
             // Ciclo ativo para uma cor do LED RGB
             uint valor_cor = (largura_pulso - 500) * 255 / (2400 - 500); 
-            definir_cor_rgb(valor_cor, 255 - valor_cor, 0); // Transição de vermelha para verde
+            definir_cor_rgb(valor_cor, 255 - valor_cor, 0); // Transição de verde para vermelho
             sleep_ms(atraso_ms);
         }
     } else {
@@ -83,7 +83,7 @@ void mover_suavemente(uint gpio_pin, uint largura_inicial, uint largura_final, i
 
             // Ciclo ativo para uma cor do LED RGB
             uint valor_cor = (largura_pulso - 500) * 255 / (2400 - 500); 
-            definir_cor_rgb(valor_cor, 255 - valor_cor, 0); // Transição de verde para vermelho
+            definir_cor_rgb(valor_cor, 255 - valor_cor, 0); // Transição de vermelho para verde
             sleep_ms(atraso_ms);
         }
     }
@@ -95,12 +95,9 @@ int main() {
     configurar_pwm_servo(SERVO_PIN); // Configura o PWM para o servomotor
     configurar_pwm_rgb(LED_VERMELHO, LED_VERDE, LED_AZUL); // Configura o PWM para o LED RGB
 
-    // Frequência de PWM para 50Hz (período de 20ms)
-    // Já configurado na função configurar_pwm_servo.
-
     // Ciclo ativo para 2400µs (Duty Cycle de 0,12%)
     definir_largura_pulso(SERVO_PIN, 2400); // 180° corresponde a 2400µs
-    definir_cor_rgb(0, 255, 0); // LED verde
+    definir_cor_rgb(255, 0, 0); // LED verde
     printf("Servo em 180 graus (2400µs)\n");
     sleep_ms(5000); // Aguarda 5 segundos
 
@@ -112,7 +109,7 @@ int main() {
 
     //Ciclo ativo para 500µs (Duty Cycle de 0,025%)
     definir_largura_pulso(SERVO_PIN, 500); // 0° corresponde a 500µs
-    definir_cor_rgb(255, 0, 0); // LED vermelho
+    definir_cor_rgb(0, 255, 0); // LED vermelho
     printf("Servo em 0 graus (500µs)\n");
     sleep_ms(5000); // Aguarda 5 segundos
 
