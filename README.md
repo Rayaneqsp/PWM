@@ -30,12 +30,12 @@ O código faz uso da biblioteca pico/stdlib e das funções de PWM para controla
 
     **Configuração do Circuito no Simulador**:
    - No editor Wokwi, adicione o **Servo motor** e o **LED RGB** conecte-os aos seguintes pinos do Raspberry Pi Pico W:
-| Componente       | Pino GPIO no Pico W |
-|------------------|---------------------|
-| LED Azul         | GPIO 12             |
-| LED Vermelho     | GPIO 13             |
-| LED Verde        | GPIO 11             |
-| Servomotor       | GPIO 22             |
+| Componente  | Pino GPIO no Pico W |
+|-------------|---------------------|
+| Cor Azul    | GPIO 12             |
+| Cor Vermelho| GPIO 13             |
+| Cor Verde   | GPIO 11             |
+| Servo motor | GPIO 22             |
 
 ## Observações:
 
